@@ -3,10 +3,10 @@ const ytdl = require('ytdl-core');
 module.exports.run = async (bot, message, args) => {
 
     const streamOptions = {seek: 0, volume: 1};
-    let voiceChannelID = "534890071606689792";
-
-    console.log("Iniciando Comando de Voz");
-
+    let voiceChannelID = "533267060881358849";
+    let id = 'https://www.youtube.com/watch?v=sGNrr5qUNIw';
+    console.log("Starting Voice Command");
+    
     if (voiceChannelID != null) {
         if(message.guild.channels.get(voiceChannelID)){
             let vc = message.guild.channels.get(voiceChannelID);
@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
 
             vc.join().then(connection => {
                 console.log("[VOICE CHANNEL] joined countdown channel.");
-                const stream = ytdl('https://youtu.be/yfMTjSfchB4', {filter: 'audioonly'});
+                const stream = ytdl(id, {highWaterMark: 1024 * 1024 * 10 , quality: 'highestaudio'});
                 const dispatcher = connection.playStream(stream, streamOptions);
 
                 dispatcher.on("end", end => {
@@ -29,5 +29,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "5mc"
+    name: "duo"
 }

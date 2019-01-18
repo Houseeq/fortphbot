@@ -6,7 +6,7 @@ const owner = settings.owner;
 
 module.exports.run = async (bot, message, args) => {
    let roles = message.guild.roles;
-   let scrimmers = message.guild.roles.find( r => r.name === "everyone");
+   let scrimmers = message.guild.roles.find( r => r.name === "@everyone");
    let snipeChannel = message.channel;
    const filter = m => !m.author.bot;
    let game = new Listing();
@@ -40,7 +40,7 @@ module.exports.run = async (bot, message, args) => {
         -If you're with a ps4 player, give the party leader to the pc player.
         -Enter the last 3 digits of your server.`)
         .setImage("https://i.imgur.com/xvTkWJv.png")
-        .setColor("#24E711")
+        .setColor("#E96D33")
         .addField("Hosted by" , message.author)
         .setFooter("Developed by the FortnitePH PRO Scrims Team")
 	.setTimestamp()
@@ -54,7 +54,7 @@ module.exports.run = async (bot, message, args) => {
     let timeEmbed = new Discord.RichEmbed()
         .setTitle("**Next game in...**")
         .setDescription(time + "minutes")
-        .setColor("#EDFF21");
+        .setColor("#E96D33");
         
 
     setTimeout(async () => {
@@ -80,7 +80,7 @@ module.exports.run = async (bot, message, args) => {
 
     let last3 = new Discord.RichEmbed()
         .setTitle ("**Servers**")
-        .setColor ("#1E2460")
+        .setColor ("#E96D33")
 
     setTimeout(async () => {
         editLast3= await message.channel.send({embed: last3});
@@ -127,7 +127,7 @@ module.exports.run = async (bot, message, args) => {
     let str = "";
     last3 = new Discord.RichEmbed()
         .setTitle("**Servers**")
-        .setColor("#1E2460")
+        .setColor("#E96D33")
 
     for (var i =0; i < game.data.length; i++){
         str = "";
@@ -154,7 +154,7 @@ module.exports.run = async (bot, message, args) => {
 
         console.log(`Collected ${collected.size} items`);
         let endMessage = new Discord.RichEmbed()
-			.setColor("#F80000")
+			.setColor("#E60D0D")
             .setDescription("**No more codes accepted at this point, good luck!**")
             .setFooter("Chat blocked..." , "https://i.imgur.com/Hqvs7k7.png")
 		message.channel.send({embed: endMessage});

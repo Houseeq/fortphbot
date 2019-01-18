@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports.run = async (bot, message, args) => {
 
     if (args.length === 0){
-        message.channel.send("Es Necesario Un Rol Despues Del Comando : !add-role @scrimHost");
+        message.channel.send("A role is necessary for the command: !add-role @Moderator");
     }else if (args.length > 0){
         let roles_raw = fs.readFileSync('./roles.json');
         let roles_array = JSON.parse(roles_raw);
@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         for (var i = 0; i < roles_array.roles.length; i++){
             if (role === roles_array.roles[i]){
                 found = true
-                message.channel.send(role +"Ya Presente En El Rol Permitido");
+                message.channel.send(role +"Role is already allowed.");
                 return;
             }
         }
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
             roles_array.roles.push(role);
             let roles_write = JSON.stringify(roles_array)
             fs.writeFileSync('./roles.json', roles_write);
-			message.channel.send(role +"Rol Agregado Exitosamente");
+			message.channel.send(role +"Role added successfully.");
         }
     } 
 

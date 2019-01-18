@@ -2,15 +2,15 @@
 
 module.exports.run = async (bot,message,args) => {
 
-message.channel.send(`Siguiente Scrim De Duos En 10 Minutos @everyone
-**Unanse al Conteo!!!**`)
+message.channel.send(`Next squad scrim in 10 minutes @everyone
+**(Join the squad snipes vc)**`)
     
     
     }
     
     
     module.exports.help = {
-        name: "10m-duos"
+        name: "10m-squad"
     }
     
     

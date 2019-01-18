@@ -8,25 +8,25 @@ module.exports.run = async (bot,message,args) => {
     const collector = snipeChannel.createMessageCollector(filter,{max: 200, maxMatches: 200, time: 180000});
 
     let menu = new Discord.RichEmbed()
-        .setTitle("Mensaje Pesonalizado")
-        .addField("A +","Seleccionar Titulo")
-        .addField("B +","Seleccionar Descripcion")
-        .addField("C +","Seleccionar Author")
-        .addField("D +","Agregar Linea")
-        .addField("E +","Agregar Linea")
-        .addField("F +", "selecionar color")
-        .addField("G +","Seleccionar Pie De Pagina")
-        .addField("!listo", "Para Guardar")
+        .setTitle("Personalized Message")
+        .addField("A +","Select Title")
+        .addField("B +","Select Description")
+        .addField("C +","Select Author")
+        .addField("D +","Add Line")
+        .addField("E +","Add Line")
+        .addField("F +", "Select Color")
+        .addField("G +","Select Footer")
+        .addField("!ready", "To Save")
         .setColor("#330033");
     
         message.channel.send({embed: menu});
 
     let notes = new Discord.RichEmbed()
-    let d1 = "Olvidaste la D para el campo principal";
-    let d2 = "Olvidaste el D2 para el segundo campo."
+    let d1 = "You forgot the D for the main field";
+    let d2 = "You forgot the D2 for the second field."
 
     collector.on('collect', m => {
-        if (m.content === "!listo"){
+        if (m.content === "!ready"){
             collector.stop();
             return;
         }else if (m.content.substring(0,1).toUpperCase() === "A") {

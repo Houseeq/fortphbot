@@ -4,19 +4,14 @@ module.exports.run = async (bot, message, args) => {
     let botembed = new Discord.RichEmbed()
     .setTitle("**Bot Information**")
     .addField("Bot name", bot.user.username)
-    .addField("Los comandos de count son :", "!count: para comenzar a contar. !5mc: para informar que faltan 5 minutos para la cuenta regresiva. !vrestart para reiniciar el bot de count por algun fallo **ejecutar hasta que salga del canal de voz**")
-    .addField("Los comandos de inicio son :","!start que es para los códigos: inicie después de 15 segundos después del terminar el conteo para personas con mucho tiempo en la pantalla de carga , Si necesita hacer REQ Esta El !start-req ,para detener el recolector manualmnete con el comando !stop en codigo o codigo-req, y listo . pd: se detiene automatico luego de unos minutos")
-    .addField("Los Comandos del Canal de Mensajes De La Scrim son :",`!1m o !1m-duos o !1m-squads para informar en el chat que falta un minuto para el scrim
-    !5m o !5m-duos o !5m-squads para informar en el chat que faltan cinco minutos para el scrim
-    !10m o !10m-duos o !10m-squads para informar en el chat que faltan diez minutos para el scrim`)
-    .addField("Commando De Notas :","!notes es para publicidad o algun cartel nesecitado para cofigurarlo utiliza !setnotes")
-    .addField("Comando para iniciar Scrims automaticamente 24/7 ;",`!auto-start inicia scrims automáticamente sin tener que poner ningún código pero puedes iniciarlos manualmente
-	Pero para ahorrar tiempo ya he añadido que lo inicie automáticamente .
-	para detener los scrims automáticos solo tienes que poner el codigo !auto-stop`)
+    .addField("The count commands are:",`!solo: To start a countdown in the solo snipes vc.","!duo: To start a countdown in the duo snipes vc.","!squad: To start a countdown in the squad snipes vc.`)
+    .addField("The start commands are:",`!start: Allows players to type in their game codes.","!stop: Manually locks the game code text channel (shouldn't be necessary).`)
+    .addField("The warning commands are:",`!1m-solo, !1m-duo, !1m-squad: To inform the players that the next scrim is starting in 1 minute. 5m-solo, 5m-duo, 5m-squad: To inform the players that the next scrim is starting in 5 minutes. 10m-solo, 10m-duo, 10m-squad: To inform the players that the next scrim is starting in 10 minutes. !now: To inform the players that the scrim game will be starting now.`)
+    .addField("Note Commands:",`!notes: Is to post/advertise when needed. Set it up using !setnotes.`)
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .addField("Creado En", bot.user.createdAt)
-    .setFooter("Creado Por !Fabian Araya (Xccursed_CR)", "https://i.imgur.com/ADnSULk.jpg")
+    .addField("Created at", bot.user.createdAt)
+    .setFooter("Developed by the FortnitePH PRO Scrims Team", "https://i.imgur.com/UsGfZXn.png")
 
     message.channel.send(botembed);
     

@@ -3,7 +3,7 @@ const ytdl = require('ytdl-core');
 module.exports.run = async (bot, message, args) => {
 
     const streamOptions = {seek: 0, volume: 1};
-    let voiceChannelID = "533267060881358849";
+    let voiceChannelID = "530940914756222991";
     let id = 'https://www.youtube.com/watch?v=sGNrr5qUNIw';
     console.log("Starting Voice Command");
     
@@ -29,5 +29,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "duo"
+    name: "test"
 }
